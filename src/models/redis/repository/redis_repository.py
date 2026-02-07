@@ -24,9 +24,9 @@ class RedisRepo(IRedisRepo):
             return value.decode("utf-8")
         return None
 
-    def insert_ex(self, key: str, value: any, ttl: int) -> None:
-        self.__redis_conn.set(key, value, ttl=ttl)
+    def insert_ex(self, key: str, value: any, ex: int) -> None:
+        self.__redis_conn.set(key, value, ex=ex)
 
-    def insert_hash_ex(self, key: str, field: str, value: any, ttl: int) -> None:
+    def insert_hash_ex(self, key: str, field: str, value: any, ex: int) -> None:
         self.__redis_conn.hset(key, field, value)
-        self.__redis_conn.expire(key, ttl)
+        self.__redis_conn.expire(key, ex)

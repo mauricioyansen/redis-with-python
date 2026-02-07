@@ -1,4 +1,4 @@
 class HttpRes:
     def __init__(self, body: dict, status_code: int):
         self.body = body
-        self.params = status_code
+        self.status_code = status_code

@@ -37,7 +37,7 @@ class ProductFinder:
     def __insert_in_cache(self, product: tuple) -> None:
         product_name = product[1]
         value = f"{product[2]}, {product[3]}"
-        self.__redis_repo.insert_ex(product_name, value, ttl=60)
+        self.__redis_repo.insert_ex(product_name, value, ex=60)
 
     def __format_response(self, product: tuple) -> HttpRes:
         return HttpRes(

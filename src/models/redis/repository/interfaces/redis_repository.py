@@ -20,9 +20,9 @@ class IRedisRepo(ABC):
         pass
 
     @abstractmethod
-    def insert_ex(self, key: str, value: any, ttl: int) -> None:
+    def insert_ex(self, key: str, value: any, ex: int) -> None:
         pass
 
     @abstractmethod
-    def insert_hash_ex(self, key: str, field: str, value: any, ttl: int) -> None:
+    def insert_hash_ex(self, key: str, field: str, value: any, ex: int) -> None:
         pass
