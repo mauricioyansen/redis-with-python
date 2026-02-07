@@ -1,7 +1,8 @@
 from redis import Redis
+from .interfaces.redis_repository import IRedisRepo
 
 
-class RedisRepo:
+class RedisRepo(IRedisRepo):
     def __init__(self, redis_conn: Redis) -> None:
         self.__redis_conn = redis_conn
 

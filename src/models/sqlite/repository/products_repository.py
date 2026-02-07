@@ -1,7 +1,8 @@
 from sqlite3 import Connection as SQLiteConn
+from .interfaces.products_repository import IProductsRepo
 
 
-class ProductsRepo:
+class ProductsRepo(IProductsRepo):
     def __init__(self, conn: SQLiteConn) -> None:
         self.__conn = conn
 
